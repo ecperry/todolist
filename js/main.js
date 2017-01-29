@@ -27,14 +27,14 @@ new Vue({
     sayContent: function(c){
       return `${c.content}`;
     },
-//need a new command other than push, delete isn't working, splice deletes whole list 
+//need a new command other than push, delete isn't working, splice deletes whole list
     deleteContent: function(){
       this.cards.delete({
       title: this.titleInputValue,
       content: this.contentInputValue
         })
-    }
-  },
+    },
+},
 
   data: {
     titleInputValue: '',
@@ -47,8 +47,7 @@ new Vue({
 
    ]
  }
-
-});
+ });
 
 // add Card
 // delete content
