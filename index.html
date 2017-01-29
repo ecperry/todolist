@@ -11,15 +11,15 @@
   <body>
     <div id="app" class="container">
 
-      <div class="column is-half is-offset-one-quarter content">
+    <div class="column is-half is-offset-one-quarter content">
 
         <section>
-          <div class="card" 'v-for="click card in cards"' 'v-on:click"addCard."'>
+          <div class="card">
             <div class="card-header">
-              <p class="card-header-title">Todo Item Title</p>
+              <p class="card-header-title" v-for="card in cards"> {{ sayTitle(card) }} </p>
             </div>
             <div class="card-content">
-              <p>My First Todo Item</p>
+              <p v-for="card in cards"> {{ sayContent(card) }}</p>
             </div>
             <footer class="card-footer">
               <a class="card-footer-item">Edit</a>
@@ -28,22 +28,23 @@
           </div>
         </section>
 
+
         <section>
           <label class="label">New Todo</label>
           <div class="control is-grouped">
             <div class="control is-expanded">
-              <input type="text" class="input" placeholder="Todo Item Title" />
+              <input type="text" class="input" placeholder="Todo Item Title" v-model="titleInputValue"/>
             </div>
             <div class="control">
-              <a class="button is-primary">Create</a>
+              <a class="button is-primary" @click="addCard">Create</a>
             </div>
           </div>
           <div class="control">
-            <textarea class="textarea" placeholder="Todo item content"></textarea>
+            <textarea class="textarea" placeholder="Todo item content" v-model="contentInputValue"></textarea>
           </div>
           <div class="control">
             <!-- this should only be visible if we are editing -->
-            <a class="button">Cancel</a>
+            <a class="button" @click="deleteContent">Cancel</a>
           </div>
         </section>
 

@@ -5,23 +5,45 @@
 new Vue({
   el: '#app',
 
-  data: {
-    cards[
-      {title: 'To Do Item'
-        content: 'My first to do item.'}
-
-
-  },
-
   methods: {
-    addCard () {
-      this.card.push();
+    addCard: function (){
+        this.cards.push({
+          title: this.titleInputValue,
+          content: this.contentInputValue
+        })
+
+          this.titleInputValue = '';
+          this.contentInputValue = ''
+     },
+
+    sayTitle: function(t){
+      return `${t.title}`;
+    },
+
+    sayContent: function(c){
+      return `${c.content}`;
+    },
+
+    deleteContent: function(){
+      this.cards.push({
+      content: ' '
+        })
     }
+  },
+  data: {
+    titleInputValue: '',
+    contentInputValue: '',
+    cards: [
+    {
+      title: 'To Do Item',
+      content: 'My first to do item.'
+    },
 
-    cancel(){
+    {title: 'To Do Item',
+      content: 'My first to do item.'
+      }
 
-    }
-
+   ]
   }
 });
 
