@@ -37,11 +37,7 @@ new Vue({
     {
       title: 'To Do Item',
       content: 'My first to do item.'
-    },
-
-    {title: 'To Do Item',
-      content: 'My first to do item.'
-      }
+    }
 
    ]
   }
