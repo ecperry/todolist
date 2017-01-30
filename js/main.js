@@ -31,20 +31,26 @@ new Vue({
       return `${c.content}`;
     },
 //need a new command other than push, delete isn't working, splice deletes whole list
+//trying this but it's not working. from https://forum-archive.vuejs.org/topic/4903/clearing-input-fields
     cancelItem: function ()
     {
-
+      this.$store.dispatch({
+        clear:''
+      })
+      this.text = ''
     },
 
+// still having issues here... not sure what's going on. Somehow I'm not matching my object to the function or something?
     doneItem: function(card)
     {
-      this.cards.splice( card, 1)
+      this.cards.splice(card, 1)
     },
 },
 
   data: {
     titleInputValue: '',
     contentInputValue: '',
+    clear: '',
     cards: [
       {
       title: 'To Do Item',
