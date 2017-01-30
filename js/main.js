@@ -36,9 +36,9 @@ new Vue({
 
     },
 
-    doneItem: function()
+    doneItem: function(card)
     {
-      this.cards.splice(this, 1)
+      this.cards.splice( card, 1)
     },
 },
 
