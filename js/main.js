@@ -31,14 +31,14 @@ new Vue({
       return `${c.content}`;
     },
 //need a new command other than push, delete isn't working, splice deletes whole list
-    deleteContent: function ()
+    cancelItem: function ()
     {
 
     },
 
     doneItem: function()
     {
-
+      this.cards.splice(this, 1)
     },
 },
 
