@@ -22,8 +22,8 @@
               <p> {{ sayContent(card) }}</p>
             </div>
             <footer class="card-footer">
-              <a class="card-footer-item">Edit</a>
-              <a class="card-footer-item" @click="doneItem">Done</a>
+              <a class="card-footer-item" @click="editTodo(todo)">Edit</a>
+              <a class="card-footer-item" @click="doneItem(card)">Done</a>
             </footer>
           </div>
         </section>
